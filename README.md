@@ -1,2 +1,310 @@
-# MidnightRacing.github.io
-RIT Dubai FSAE
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RIT Dubai Formula Student</title>
+    <style>
+        /* --- RIT BRAND COLORS --- */
+        :root {
+            --rit-orange: #F76902;
+            --rit-black: #000000;
+            --rit-white: #FFFFFF;
+            --rit-gray: #333333;
+            --rit-light-gray: #f4f4f4;
+        }
+
+        /* --- GLOBAL STYLES --- */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--rit-black);
+            line-height: 1.6;
+        }
+
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+
+        /* --- NAVIGATION --- */
+        nav {
+            background-color: var(--rit-black);
+            color: var(--rit-white);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--rit-orange);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a:hover {
+            color: var(--rit-orange);
+            transition: 0.3s;
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://placehold.co/1920x1080/111/333?text=RIT+Dubai+FSAE+Car');
+            background-size: cover;
+            background-position: center;
+            height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--rit-white);
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+        }
+
+        .hero h2 {
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin-bottom: 2rem;
+            color: var(--rit-orange);
+        }
+
+        .btn {
+            background-color: var(--rit-orange);
+            color: var(--rit-white);
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: 0.3s;
+            border: 2px solid var(--rit-orange);
+        }
+
+        .btn:hover {
+            background-color: transparent;
+            color: var(--rit-orange);
+        }
+
+        /* --- ABOUT SECTION --- */
+        .section {
+            padding: 60px 5%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            position: relative;
+        }
+        
+        /* Orange underline for titles */
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--rit-orange);
+            margin: 10px auto 0;
+        }
+
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+            font-size: 1.1rem;
+        }
+
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+            background-color: var(--rit-gray);
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            border-radius: 10px;
+        }
+
+        /* --- ENGINEERING GRID --- */
+        .engineering {
+            background-color: var(--rit-light-gray);
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-bottom: 5px solid var(--rit-orange);
+        }
+
+        .card h3 {
+            color: var(--rit-orange);
+            margin-top: 0;
+        }
+
+        /* --- SPONSORS --- */
+        .sponsors-grid {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .sponsor-logo {
+            width: 150px;
+            height: 80px;
+            background-color: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #666;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: var(--rit-black);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .footer-links {
+            margin-bottom: 20px;
+        }
+        
+        .footer-links a {
+            margin: 0 10px;
+            color: #bbb;
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .nav-links { display: none; } /* Simplified for mobile */
+            .logo { font-size: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">RIT Dubai FSAE</div>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#engineering">Engineering</a>
+            <a href="#sponsors">Sponsors</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <h1>Design. Build. Race.</h1>
+        <h2>The Future of Engineering Starts Here.</h2>
+        <a href="#contact" class="btn">Join the Team</a>
+    </header>
+
+    <section id="about" class="section">
+        <h2 class="section-title">Who We Are</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>We are the premier collegiate design team at RIT Dubai. Our goal is simple but ambitious: to design, manufacture, and race a formula-style vehicle to compete on the international stage.</p>
+                <p>We bridge the gap between classroom theory and real-world engineering. From <strong>Computational Fluid Dynamics (CFD)</strong> to marketing and finance, our team functions like a small business and a race team rolled into one.</p>
+            </div>
+            <div class="about-image">
+                [Team Photo Placeholder]
+            </div>
+        </div>
+    </section>
+
+    <section id="engineering" class="section engineering">
+        <h2 class="section-title">Engineering Excellence</h2>
+        <div class="grid-container">
+            <div class="card">
+                <h3>Aerodynamics</h3>
+                <p>Our 2026 aero package features a high-downforce front wing designed with custom airfoils. We utilize ANSYS Fluent to simulate airflow and optimize cornering grip.</p>
+            </div>
+            <div class="card">
+                <h3>Chassis & Suspension</h3>
+                <p>A lightweight tubular spaceframe chassis ensures driver safety while maximizing torsional rigidity. Our suspension geometry is tuned for aggressive autocross handling.</p>
+            </div>
+            <div class="card">
+                <h3>Powertrain</h3>
+                <p>Optimizing intake and exhaust flow for maximum torque. We manage engine mapping and electronics to ensure reliability under race conditions.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="sponsors" class="section">
+        <h2 class="section-title">Our Partners</h2>
+        <p style="text-align: center; max-width: 600px; margin: 0 auto;">Formula SAE is impossible without the support of our generous sponsors. Thank you for driving the future of engineering.</p>
+        <div class="sponsors-grid">
+            <div class="sponsor-logo">RIT Dubai</div>
+            <div class="sponsor-logo">Sponsor 2</div>
+            <div class="sponsor-logo">Sponsor 3</div>
+            <div class="sponsor-logo">Sponsor 4</div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <h3>Join the Race</h3>
+        <p>Interested in joining the team or becoming a sponsor?</p>
+        <div class="footer-links">
+            <a href="#">Instagram</a>
+            <a href="#">LinkedIn</a>
+            <a href="mailto:fsae@rit.edu">Email Us</a>
+        </div>
+        <p style="font-size: 0.8rem; color: #666;">&copy; 2026 RIT Dubai Formula Student Team</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
